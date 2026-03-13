@@ -1,0 +1,321 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Untitled_Artwork 3.png" type="Texture" id=1]
+[ext_resource path="res://assets/screen.png" type="Texture" id=2]
+[ext_resource path="res://custom_font_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/ClickingTask.gd" type="Script" id=4]
+[ext_resource path="res://assets/button1.png" type="Texture" id=5]
+[ext_resource path="res://scenes/WorkingTimer.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Score.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="ClickingTask" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.427451, 0.427451, 1 )
+position = Vector2( 515, 303.5 )
+scale = Vector2( 0.431323, 0.36271 )
+texture = ExtResource( 1 )
+
+[node name="Computer" type="Sprite" parent="Background"]
+position = Vector2( -13.6322, 18.2982 )
+scale = Vector2( 1.35077, 1.64296 )
+texture = ExtResource( 2 )
+offset = Vector2( 10.9503, -20.3667 )
+
+[node name="Screen" type="Sprite" parent="."]
+position = Vector2( 488, 301 )
+scale = Vector2( 0.410949, 0.417347 )
+
+[node name="clickingTaskLabel" type="Label" parent="Screen"]
+anchor_left = -330.941
+anchor_top = -474.425
+anchor_right = -330.941
+anchor_bottom = -474.425
+margin_left = 0.94101
+margin_top = 4.42502
+margin_right = 859.941
+margin_bottom = 69.425
+theme = ExtResource( 3 )
+text = "Stay focused on your work!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="FailedLabel" type="Label" parent="Screen"]
+anchor_left = -223.872
+anchor_top = -359.413
+anchor_right = -223.872
+anchor_bottom = -359.413
+margin_left = -0.00012207
+margin_top = -0.000152588
+margin_right = 630.0
+margin_bottom = 53.9998
+theme = ExtResource( 3 )
+text = "You failed the task! Try again. 
+"
+
+[node name="CompletedLabel" type="Label" parent="Screen"]
+margin_left = -420.977
+margin_top = -359.413
+margin_right = 587.023
+margin_bottom = -305.413
+theme = ExtResource( 3 )
+text = "Well done! You successfully completed your task."
+
+[node name="Work" type="Button" parent="Screen"]
+anchor_left = -4.867
+anchor_top = -270.758
+anchor_right = -4.867
+anchor_bottom = -270.758
+margin_left = 0.000178814
+margin_top = 9.15527e-05
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Work"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Shopping" type="Button" parent="Screen"]
+anchor_left = -464.778
+anchor_top = -282.738
+anchor_right = -464.778
+anchor_bottom = -282.738
+margin_left = 0.000183105
+margin_top = -0.000396729
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Shopping"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Eat" type="Button" parent="Screen"]
+anchor_left = 323.641
+anchor_top = -333.056
+anchor_right = 323.641
+anchor_bottom = -333.056
+margin_left = 9.15527e-05
+margin_top = -0.000244141
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Prepare meal"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="WorkingTimer" type="Timer" parent="Screen"]
+one_shot = true
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Screen/WorkingTimer"]
+anchor_left = 0.684
+anchor_top = 0.178
+anchor_right = 0.684
+anchor_bottom = 0.178
+margin_left = -0.416016
+margin_top = 0.199997
+margin_right = 51.584
+margin_bottom = 29.2
+
+[node name="Score" type="Label" parent="Screen"]
+margin_left = -464.778
+margin_top = -470.0
+margin_right = -305.778
+margin_bottom = -405.0
+theme = ExtResource( 3 )
+script = ExtResource( 7 )
+
+[node name="Cat" type="Button" parent="Screen"]
+anchor_left = -328.508
+anchor_top = -323.472
+anchor_right = -328.508
+anchor_bottom = -323.472
+margin_left = -141.137
+margin_top = 244.401
+margin_right = 188.863
+margin_bottom = 354.401
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Play with cat"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Break" type="Button" parent="Screen"]
+anchor_left = -65.702
+anchor_top = -38.337
+anchor_right = -65.702
+anchor_bottom = -38.337
+margin_left = 0.000343323
+margin_top = -0.000339508
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Take a break"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Chat" type="Button" parent="Screen"]
+anchor_left = 182.504
+anchor_top = -129.389
+anchor_right = 182.504
+anchor_bottom = -129.389
+margin_left = 0.00038147
+margin_top = 0.000274658
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Chat"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Window" type="Button" parent="Screen"]
+anchor_left = -328.508
+anchor_top = -323.472
+anchor_right = -328.508
+anchor_bottom = -323.472
+margin_left = 598.615
+margin_top = 378.582
+margin_right = 928.615
+margin_bottom = 488.582
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Check weather"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Game" type="Button" parent="Screen"]
+anchor_left = -328.508
+anchor_top = -323.472
+anchor_right = -328.508
+anchor_bottom = -323.472
+margin_left = -34.0674
+margin_top = 392.959
+margin_right = 295.933
+margin_bottom = 502.959
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Play a game"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Walk" type="Button" parent="Screen"]
+anchor_left = -199.538
+anchor_top = -179.707
+anchor_right = -199.538
+anchor_bottom = -179.707
+margin_left = -0.000198364
+margin_top = 0.000473022
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Take a walk"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Flowers" type="Button" parent="Screen"]
+anchor_left = -282.274
+anchor_top = -388.166
+anchor_right = -282.274
+anchor_bottom = -388.166
+margin_left = 0.000457764
+margin_top = -0.000244141
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Water plants"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true
+
+[node name="Sleep" type="Button" parent="Screen"]
+anchor_left = 80.302
+anchor_top = -414.523
+anchor_right = 80.302
+anchor_bottom = -414.523
+margin_left = -0.00012207
+margin_top = -0.000183105
+margin_right = 330.0
+margin_bottom = 110.0
+focus_mode = 1
+theme = ExtResource( 3 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+enabled_focus_mode = 1
+text = "Sleep"
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+icon_align = 1
+expand_icon = true

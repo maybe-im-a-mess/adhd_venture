@@ -1,0 +1,455 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/thought_right.png" type="Texture" id=1]
+[ext_resource path="res://scenes/CountingSheep.gd" type="Script" id=2]
+[ext_resource path="res://assets/bed.png" type="Texture" id=3]
+[ext_resource path="res://label_font.tres" type="Theme" id=4]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/Untitled_Artwork 3.png" type="Texture" id=6]
+[ext_resource path="res://custom_font_theme.tres" type="Theme" id=7]
+[ext_resource path="res://scenes/countSheep.gd" type="Script" id=8]
+[ext_resource path="res://scenes/WorkingTimer.gd" type="Script" id=9]
+[ext_resource path="res://assets/sheep.png" type="Texture" id=10]
+[ext_resource path="res://assets/cloud.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[node name="CountingSheep" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.427451, 0.427451, 1 )
+position = Vector2( 510.5, 297 )
+scale = Vector2( 0.428392, 0.357314 )
+texture = ExtResource( 6 )
+
+[node name="Bed" type="Sprite" parent="."]
+position = Vector2( 512, 419 )
+scale = Vector2( 0.503418, 0.536621 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 48.031, 838.882, 1950.75, 775.503 )
+
+[node name="FailedLabel" type="Label" parent="Bed"]
+anchor_left = -223.872
+anchor_top = -359.413
+anchor_right = -223.872
+anchor_bottom = -359.413
+margin_left = 436256.0
+margin_top = 277932.0
+margin_right = 436928.0
+margin_bottom = 277986.0
+theme = ExtResource( 7 )
+text = "You failed the task! Try again. "
+
+[node name="CompletedLabel" type="Label" parent="Bed"]
+margin_left = -421.121
+margin_top = -614.959
+margin_right = 586.879
+margin_bottom = -560.959
+theme = ExtResource( 7 )
+text = "Well done! You successfully completed your task."
+
+[node name="SleepingTimer" type="Timer" parent="Bed"]
+one_shot = true
+script = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Bed/SleepingTimer"]
+anchor_left = 0.684
+anchor_top = 0.178
+anchor_right = 0.684
+anchor_bottom = 0.178
+margin_left = 197.584
+margin_top = -45.8
+margin_right = 282.584
+margin_bottom = 8.2
+theme = ExtResource( 7 )
+
+[node name="Sheep" type="Button" parent="Bed"]
+anchor_left = -0.018
+anchor_top = -0.514
+anchor_right = -0.018
+anchor_bottom = -0.514
+margin_left = -975.9
+margin_top = -387.65
+margin_right = -743.9
+margin_bottom = -141.65
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+icon = ExtResource( 10 )
+flat = true
+expand_icon = true
+
+[node name="Cloud1" type="Button" parent="Bed"]
+anchor_left = 0.123
+anchor_top = -0.51
+anchor_right = 0.123
+anchor_bottom = -0.51
+margin_left = -974.826
+margin_top = -387.425
+margin_right = -706.826
+margin_bottom = -143.425
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud2" type="Button" parent="Bed"]
+anchor_left = 0.276
+anchor_top = -0.51
+anchor_right = 0.276
+anchor_bottom = -0.51
+margin_left = -975.213
+margin_top = -387.425
+margin_right = -707.213
+margin_bottom = -143.425
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud3" type="Button" parent="Bed"]
+anchor_left = 0.422
+anchor_top = -0.512
+anchor_right = 0.422
+anchor_bottom = -0.512
+margin_left = -975.854
+margin_top = -387.739
+margin_right = -707.854
+margin_bottom = -143.739
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud4" type="Button" parent="Bed"]
+anchor_left = 0.57
+anchor_top = -0.515
+anchor_right = 0.57
+anchor_bottom = -0.515
+margin_left = -974.437
+margin_top = -387.277
+margin_right = -706.437
+margin_bottom = -143.277
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud5" type="Button" parent="Bed"]
+anchor_left = 0.72
+anchor_top = -0.512
+anchor_right = 0.72
+anchor_bottom = -0.512
+margin_left = -974.933
+margin_top = -387.739
+margin_right = -706.933
+margin_bottom = -143.739
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud7" type="Button" parent="Bed"]
+anchor_left = 0.121
+anchor_top = -0.18
+anchor_right = 0.121
+anchor_bottom = -0.18
+margin_left = -974.899
+margin_top = -387.874
+margin_right = -706.899
+margin_bottom = -143.874
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud8" type="Button" parent="Bed"]
+anchor_left = 0.274
+anchor_top = -0.18
+anchor_right = 0.274
+anchor_bottom = -0.18
+margin_left = -975.285
+margin_top = -387.874
+margin_right = -707.285
+margin_bottom = -143.874
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud9" type="Button" parent="Bed"]
+anchor_left = 0.42
+anchor_top = -0.183
+anchor_right = 0.42
+anchor_bottom = -0.183
+margin_left = -975.927
+margin_top = -387.413
+margin_right = -707.927
+margin_bottom = -143.413
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud12" type="Button" parent="Bed"]
+anchor_left = 0.873
+anchor_top = -0.188
+anchor_right = 0.873
+anchor_bottom = -0.188
+margin_left = -975.32
+margin_top = -387.265
+margin_right = -707.32
+margin_bottom = -143.265
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud13" type="Button" parent="Bed"]
+anchor_left = 0.122
+anchor_top = 0.173
+anchor_right = 0.122
+anchor_bottom = 0.173
+margin_left = -974.862
+margin_top = -387.513
+margin_right = -706.862
+margin_bottom = -143.513
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud14" type="Button" parent="Bed"]
+anchor_left = 0.275
+anchor_top = 0.173
+anchor_right = 0.275
+anchor_bottom = 0.173
+margin_left = -975.249
+margin_top = -387.513
+margin_right = -707.249
+margin_bottom = -143.513
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud15" type="Button" parent="Bed"]
+anchor_left = -0.021
+anchor_top = -0.173
+anchor_right = -0.021
+anchor_bottom = -0.173
+margin_left = -974.111
+margin_top = -387.708
+margin_right = -706.111
+margin_bottom = -143.708
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud16" type="Button" parent="Bed"]
+anchor_left = 0.569
+anchor_top = 0.168
+anchor_right = 0.569
+anchor_bottom = 0.168
+margin_left = -974.473
+margin_top = -387.365
+margin_right = -706.473
+margin_bottom = -143.365
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud17" type="Button" parent="Bed"]
+anchor_left = 0.719
+anchor_top = 0.171
+anchor_right = 0.719
+anchor_bottom = 0.171
+margin_left = -974.969
+margin_top = -387.826
+margin_right = -706.969
+margin_bottom = -143.826
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud18" type="Button" parent="Bed"]
+anchor_left = 0.874
+anchor_top = 0.166
+anchor_right = 0.874
+anchor_bottom = 0.166
+margin_left = -975.283
+margin_top = -387.678
+margin_right = -707.283
+margin_bottom = -143.678
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud10" type="Button" parent="Bed"]
+anchor_left = -0.025
+anchor_top = 0.175
+anchor_right = -0.025
+anchor_bottom = 0.175
+margin_left = -974.257
+margin_top = -387.199
+margin_right = -706.257
+margin_bottom = -143.199
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud19" type="Button" parent="Bed"]
+anchor_left = 0.119
+anchor_top = 0.526
+anchor_right = 0.119
+anchor_bottom = 0.526
+margin_left = -974.971
+margin_top = -387.152
+margin_right = -706.971
+margin_bottom = -143.152
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud20" type="Button" parent="Bed"]
+anchor_left = 0.272
+anchor_top = 0.526
+anchor_right = 0.272
+anchor_bottom = 0.526
+margin_left = -975.358
+margin_top = -387.151
+margin_right = -707.358
+margin_bottom = -143.151
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud22" type="Button" parent="Bed"]
+anchor_left = 0.566
+anchor_top = 0.522
+anchor_right = 0.566
+anchor_bottom = 0.522
+margin_left = -974.582
+margin_top = -387.778
+margin_right = -706.582
+margin_bottom = -143.778
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud23" type="Button" parent="Bed"]
+anchor_left = 0.716
+anchor_top = 0.524
+anchor_right = 0.716
+anchor_bottom = 0.524
+margin_left = -975.078
+margin_top = -387.465
+margin_right = -707.078
+margin_bottom = -143.465
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud24" type="Button" parent="Bed"]
+anchor_left = 0.871
+anchor_top = 0.519
+anchor_right = 0.871
+anchor_bottom = 0.519
+margin_left = -975.393
+margin_top = -387.317
+margin_right = -707.393
+margin_bottom = -143.317
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="Cloud11" type="Button" parent="Bed"]
+anchor_left = -0.028
+anchor_top = 0.529
+anchor_right = -0.028
+anchor_bottom = 0.529
+margin_left = -974.366
+margin_top = -387.613
+margin_right = -706.366
+margin_bottom = -143.613
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="countSheep" type="Label" parent="Bed"]
+margin_left = 754.84
+margin_top = -762.177
+margin_right = 971.84
+margin_bottom = -674.177
+theme = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="CountSheep" type="Sprite" parent="."]
+position = Vector2( 698, 234 )
+scale = Vector2( 0.235674, 0.221692 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 791.802, 236.318, 1239.45, 839.499 )
+
+[node name="TaskLabel" type="Label" parent="CountSheep"]
+margin_left = -364.911
+margin_top = -320.263
+margin_right = 420.089
+margin_bottom = 220.737
+size_flags_vertical = 0
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Let's count sheep to help me sleep."
+align = 1
+valign = 1
+autowrap = true

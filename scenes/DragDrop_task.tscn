@@ -1,0 +1,419 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://assets/dog.jpg" type="Texture" id=1]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/Dog.gd" type="Script" id=3]
+[ext_resource path="res://assets/cat.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/bird.jpg" type="Texture" id=5]
+[ext_resource path="res://custom_font_theme.tres" type="Theme" id=6]
+[ext_resource path="res://assets/folder1.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Cat.gd" type="Script" id=8]
+[ext_resource path="res://assets/Untitled_Artwork 3.png" type="Texture" id=9]
+[ext_resource path="res://assets/screen.png" type="Texture" id=10]
+[ext_resource path="res://scenes/Bird.gd" type="Script" id=11]
+[ext_resource path="res://scenes/DragDrop_task.gd" type="Script" id=12]
+[ext_resource path="res://assets/frame_0_delay-0.13s.png" type="Texture" id=13]
+[ext_resource path="res://assets/frame_5_delay-0.13s.png" type="Texture" id=14]
+[ext_resource path="res://assets/frame_1_delay-0.13s.png" type="Texture" id=15]
+[ext_resource path="res://assets/frame_2_delay-0.13s.png" type="Texture" id=16]
+[ext_resource path="res://assets/frame_3_delay-0.13s.png" type="Texture" id=17]
+[ext_resource path="res://assets/frame_4_delay-0.13s.png" type="Texture" id=18]
+[ext_resource path="res://scenes/Elephant.gd" type="Script" id=19]
+[ext_resource path="res://assets/elephant.jpg" type="Texture" id=20]
+[ext_resource path="res://assets/zebra.jpg" type="Texture" id=21]
+[ext_resource path="res://assets/tiger.jpg" type="Texture" id=22]
+[ext_resource path="res://assets/horse.jpg" type="Texture" id=23]
+[ext_resource path="res://assets/otter.jpg" type="Texture" id=24]
+[ext_resource path="res://assets/flower.jpg" type="Texture" id=25]
+[ext_resource path="res://assets/tree.jpg" type="Texture" id=26]
+[ext_resource path="res://assets/stone.jpg" type="Texture" id=27]
+[ext_resource path="res://assets/cloud.jpg" type="Texture" id=28]
+[ext_resource path="res://assets/river.jpeg" type="Texture" id=29]
+[ext_resource path="res://assets/mountain.jpg" type="Texture" id=30]
+[ext_resource path="res://assets/moon.jpg" type="Texture" id=31]
+[ext_resource path="res://assets/stars.jpg" type="Texture" id=32]
+[ext_resource path="res://assets/thought_left.png" type="Texture" id=33]
+[ext_resource path="res://assets/Untitled_Artwork 2.png" type="Texture" id=34]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy 3.tres" type="DynamicFont" id=35]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 75.9, 72.2745 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 347.569, 227.621 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="DragDrop_task" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.427451, 0.427451, 1 )
+position = Vector2( 513, 302.5 )
+scale = Vector2( 0.429648, 0.365108 )
+texture = ExtResource( 9 )
+
+[node name="Computer" type="Sprite" parent="Background"]
+position = Vector2( -18.3402, 30.0443 )
+scale = Vector2( 1.35604, 1.67689 )
+texture = ExtResource( 10 )
+offset = Vector2( 10.9503, -20.3667 )
+
+[node name="Screen" type="Sprite" parent="."]
+position = Vector2( 488, 301 )
+scale = Vector2( 0.410949, 0.417347 )
+
+[node name="FailedLabel" type="Label" parent="Screen"]
+anchor_left = -223.872
+anchor_top = -359.413
+anchor_right = -223.872
+anchor_bottom = -359.413
+margin_left = -0.00012207
+margin_top = -0.000152588
+margin_right = 630.0
+margin_bottom = 53.9998
+theme = ExtResource( 6 )
+text = "You failed the task! Try again. 
+"
+
+[node name="CompletedLabel" type="Label" parent="Screen"]
+margin_left = -420.977
+margin_top = -359.413
+margin_right = 587.023
+margin_bottom = -305.413
+theme = ExtResource( 6 )
+text = "Well done! You successfully completed your task."
+
+[node name="DragDropTaskLabel" type="Label" parent="Screen"]
+anchor_left = -340.675
+anchor_top = -474.425
+anchor_right = -340.675
+anchor_bottom = -474.425
+margin_left = 0.000152588
+margin_top = -0.000396729
+margin_right = 871.0
+margin_bottom = 139.0
+theme = ExtResource( 6 )
+text = "Please drag the image to the correct folder!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="AnimalFolder" type="Sprite" parent="Screen"]
+position = Vector2( -326.074, 83.8631 )
+scale = Vector2( 0.352666, 0.331525 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Screen/AnimalFolder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/AnimalFolder/Area2D"]
+position = Vector2( 1.30981, -1.54834 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Screen/AnimalFolder"]
+margin_left = -233.29
+margin_top = -88.2786
+margin_right = 228.71
+margin_bottom = 105.721
+custom_colors/font_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Animals"
+align = 1
+valign = 1
+
+[node name="NatureFolder" type="Sprite" parent="Screen"]
+position = Vector2( 486.678, 79.071 )
+scale = Vector2( 0.352666, 0.331525 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Screen/NatureFolder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/NatureFolder/Area2D"]
+position = Vector2( 3.45044, -7.22681 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Screen/NatureFolder"]
+margin_left = -226.0
+margin_top = -74.0
+margin_right = 236.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Nature"
+align = 1
+valign = 1
+
+[node name="Dog" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Dog"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Dog/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Cat" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.418529, 0.436119 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -2.692, -4.842, 704.724, 467.588 )
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Cat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Cat/Area2D"]
+shape = SubResource( 3 )
+
+[node name="Bird" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.432065, 0.436119 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( -2.692, -4.842, 704.724, 467.588 )
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Bird"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Bird/Area2D"]
+position = Vector2( 1.17944, 6.03809 )
+shape = SubResource( 3 )
+
+[node name="Elephant" type="Sprite" parent="Screen"]
+position = Vector2( 102.202, -250 )
+scale = Vector2( 0.471931, 0.470937 )
+texture = ExtResource( 20 )
+script = ExtResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Elephant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Elephant/Area2D"]
+position = Vector2( 0.580566, 3.98541 )
+shape = SubResource( 3 )
+
+[node name="Tiger" type="Sprite" parent="Screen"]
+position = Vector2( 104.636, -252.787 )
+scale = Vector2( 0.448075, 0.431593 )
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Tiger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Tiger/Area2D"]
+position = Vector2( 5.43091, -2.77612 )
+shape = SubResource( 3 )
+
+[node name="Horse" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Horse"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Horse/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Zebra" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 21 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Zebra"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Zebra/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Otter" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 24 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Otter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Otter/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Flower" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 25 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Flower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Flower/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Tree" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Tree"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Tree/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Stone" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 27 )
+region_enabled = true
+region_rect = Rect2( 0.153564, 0.386154, 681.769, 385.748 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Stone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Stone/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="River" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 29 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/River"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/River/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Mountain" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 30 )
+region_enabled = true
+region_rect = Rect2( 672.245, 100.576, 703.392, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Mountain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Mountain/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Cloud" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 28 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Cloud"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Cloud/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Moon" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 31 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Moon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Moon/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Stars" type="Sprite" parent="Screen"]
+position = Vector2( 100, -250 )
+scale = Vector2( 0.438978, 0.425857 )
+texture = ExtResource( 32 )
+region_enabled = true
+region_rect = Rect2( 155.278, 100.576, 706.277, 483.577 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Screen/Stars"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Stars/Area2D"]
+position = Vector2( 0.000244141, -5.62622 )
+shape = SubResource( 3 )
+
+[node name="Coffee" type="Sprite" parent="."]
+position = Vector2( 493.5, 257 )
+scale = Vector2( 0.361328, 0.439454 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coffee"]
+position = Vector2( 84.8001, -159.431 )
+scale = Vector2( 0.808829, 0.787554 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="TakeBreakButton" type="Button" parent="."]
+anchor_left = -2.178
+anchor_top = -0.64
+anchor_right = -2.178
+anchor_bottom = -0.64
+margin_left = 451.0
+margin_top = 293.0
+margin_right = 602.0
+margin_bottom = 339.0
+mouse_filter = 1
+custom_colors/font_color_focus = Color( 0.564706, 0.0392157, 0.0392157, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Take a coffee break!"
+
+[node name="alex" type="Sprite" parent="."]
+position = Vector2( 915, 437 )
+scale = Vector2( 0.194092, 0.197754 )
+texture = ExtResource( 34 )
+
+[node name="bubble" type="Sprite" parent="."]
+position = Vector2( 767, 182 )
+scale = Vector2( 0.282715, 0.25708 )
+texture = ExtResource( 33 )
+region_rect = Rect2( 437.823, 510.092, 1103.73, 845.972 )
+
+[node name="drinking" type="Label" parent="."]
+margin_left = 639.0
+margin_top = 84.0
+margin_right = 878.0
+margin_bottom = 229.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 35 )
+text = "Hmm... I can't do any work without a cup of coffee!"
+align = 1
+autowrap = true

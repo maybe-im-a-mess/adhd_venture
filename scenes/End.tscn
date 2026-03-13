@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy 3.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/start_scene.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ending.gd" type="Script" id=3]
+[ext_resource path="res://scenes/End.gd" type="Script" id=4]
+[ext_resource path="res://assets/box.png" type="Texture" id=5]
+[ext_resource path="res://assets/IMG_11247879FF25-1.jpeg" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[node name="End" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510, 300 )
+scale = Vector2( 0.269728, 0.252763 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 17.7144, 5.52698, 3783.52, 2378.86 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 509.5, 136.5 )
+scale = Vector2( 0.82632, 0.435185 )
+texture = ExtResource( 5 )
+
+[node name="ending" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 32.0
+margin_right = 947.0
+margin_bottom = 216.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Hey, Alex again... Thank you for helping me today. It meant a lot for me. I know, some tasks were annoying to do because I couldn't concentrate. That's what I have to experience almost every day in my life due to ADHD. If you are interested in learning more about it, you can check this website: "
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="ending"]
+
+[node name="LinkButton" type="LinkButton" parent="."]
+margin_left = 506.0
+margin_top = 179.0
+margin_right = 662.0
+margin_bottom = 214.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/focus = SubResource( 1 )
+text = "nimh.nih.gov"
+
+[node name="happyFace" type="Sprite" parent="."]
+position = Vector2( 530.5, 469 )
+scale = Vector2( 0.0306493, 0.0322108 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="LinkButton" to="." method="_on_LinkButton_pressed"]

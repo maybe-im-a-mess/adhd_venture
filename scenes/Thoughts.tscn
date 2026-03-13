@@ -1,0 +1,641 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://scenes/Thoughts.gd" type="Script" id=1]
+[ext_resource path="res://assets/bed.png" type="Texture" id=2]
+[ext_resource path="res://assets/frame_0_delay-0.09s copy.png" type="Texture" id=3]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter.tres" type="DynamicFont" id=4]
+[ext_resource path="res://custom_font_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/frame_1_delay-0.09s.png" type="Texture" id=6]
+[ext_resource path="res://assets/frame_0_delay-0.09s.png" type="Texture" id=7]
+[ext_resource path="res://assets/frame_2_delay-0.09s.png" type="Texture" id=8]
+[ext_resource path="res://assets/frame_6_delay-0.09s.png" type="Texture" id=9]
+[ext_resource path="res://assets/frame_7_delay-0.09s.png" type="Texture" id=10]
+[ext_resource path="res://assets/Untitled_Artwork 3.png" type="Texture" id=11]
+[ext_resource path="res://assets/frame_4_delay-0.09s.png" type="Texture" id=12]
+[ext_resource path="res://assets/frame_3_delay-0.09s.png" type="Texture" id=13]
+[ext_resource path="res://assets/frame_5_delay-0.09s.png" type="Texture" id=14]
+[ext_resource path="res://assets/frame_3_delay-0.09s copy.png" type="Texture" id=15]
+[ext_resource path="res://assets/frame_4_delay-0.09s copy.png" type="Texture" id=16]
+[ext_resource path="res://assets/frame_5_delay-0.09s copy.png" type="Texture" id=17]
+[ext_resource path="res://assets/frame_1_delay-0.09s copy.png" type="Texture" id=18]
+[ext_resource path="res://assets/frame_6_delay-0.09s copy.png" type="Texture" id=19]
+[ext_resource path="res://assets/frame_7_delay-0.09s copy.png" type="Texture" id=20]
+[ext_resource path="res://assets/frame_2_delay-0.09s copy.png" type="Texture" id=21]
+[ext_resource path="res://assets/thought.png" type="Texture" id=22]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy 2.tres" type="DynamicFont" id=23]
+[ext_resource path="res://scenes/Bad5.gd" type="Script" id=24]
+[ext_resource path="res://scenes/Bad9.gd" type="Script" id=25]
+[ext_resource path="res://scenes/Bad1.gd" type="Script" id=26]
+[ext_resource path="res://scenes/Bad3.gd" type="Script" id=27]
+[ext_resource path="res://scenes/Bad7.gd" type="Script" id=28]
+[ext_resource path="res://scenes/Bad2.gd" type="Script" id=29]
+[ext_resource path="res://scenes/Bad6.gd" type="Script" id=30]
+[ext_resource path="res://scenes/Bad4.gd" type="Script" id=31]
+[ext_resource path="res://scenes/Bad8.gd" type="Script" id=32]
+[ext_resource path="res://assets/thought_right.png" type="Texture" id=33]
+[ext_resource path="res://label_font.tres" type="Theme" id=34]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy.tres" type="DynamicFont" id=35]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 186.176, 126.224 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 198.043, 117.912 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 193.269, 153.944 )
+
+[node name="Thoughts" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.427451, 0.427451, 1 )
+position = Vector2( 513, 300.5 )
+scale = Vector2( 0.429648, 0.357914 )
+texture = ExtResource( 11 )
+
+[node name="Bed" type="Sprite" parent="."]
+position = Vector2( 512, 419 )
+scale = Vector2( 0.503418, 0.536621 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 48.031, 838.882, 1950.75, 775.503 )
+
+[node name="FailedLabel" type="Label" parent="Bed"]
+anchor_left = -223.872
+anchor_top = -359.413
+anchor_right = -223.872
+anchor_bottom = -359.413
+margin_left = 436256.0
+margin_top = 277932.0
+margin_right = 436928.0
+margin_bottom = 277986.0
+theme = ExtResource( 5 )
+text = "You failed the task! Try again. "
+
+[node name="CompletedLabel" type="Label" parent="Bed"]
+margin_left = -421.121
+margin_top = -614.959
+margin_right = 586.879
+margin_bottom = -560.959
+theme = ExtResource( 5 )
+text = "Well done! You successfully completed your task."
+
+[node name="GoodFolder" type="AnimatedSprite" parent="Bed"]
+position = Vector2( 707.166, -598.188 )
+scale = Vector2( 1.12564, 0.804611 )
+frames = SubResource( 3 )
+frame = 6
+playing = true
+
+[node name="Label" type="Label" parent="Bed/GoodFolder"]
+margin_left = -153.529
+margin_top = -94.0892
+margin_right = 182.471
+margin_bottom = 51.9108
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Sleepy thoughts"
+align = 1
+valign = 1
+
+[node name="Area2D" type="Area2D" parent="Bed/GoodFolder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/GoodFolder/Area2D"]
+position = Vector2( 9.70618, -24.3185 )
+shape = SubResource( 5 )
+
+[node name="BadFolder" type="AnimatedSprite" parent="Bed"]
+position = Vector2( -744.908, -581.416 )
+scale = Vector2( 1.10834, 0.845526 )
+frames = SubResource( 4 )
+frame = 6
+playing = true
+
+[node name="Label" type="Label" parent="Bed/BadFolder"]
+margin_left = -200.732
+margin_top = -61.7111
+margin_right = 156.268
+margin_bottom = -7.71106
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Annoying thoughts"
+
+[node name="Area2D" type="Area2D" parent="Bed/BadFolder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/BadFolder/Area2D"]
+position = Vector2( -8.06516, -23.1416 )
+shape = SubResource( 6 )
+
+[node name="Bad1" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad1/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad1"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I haven't finished that task at work!"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad2" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 29 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad2/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad2"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I want to pee..."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad3" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 27 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad3/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad3"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I forgot to call my mom!"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad4" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 31 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad4/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad4"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Did I close the door?"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad5" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 24 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad5/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad5"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Did I water my plants?"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad6" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 30 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad6/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad6"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I was embarassing today!"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad7" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 28 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad7/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad7"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "My friends must hate me!"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad8" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 32 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad8/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad8"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Did I lock my car?"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Bad9" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 25 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Bad9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Bad9/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Bad9"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "What if I fail tomorrow..."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good1" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good1/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good1"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I am safe."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good2" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good2/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good2"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I had a good day!"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good3" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good3/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good3"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "1 sheep, 
+2 sheep, 
+3 sheep..."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good4" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good4/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good4"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I am grateful for this day!"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good5" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good5/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good5"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I am relaxed."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good6" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good6/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good6"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I am surrounded by love."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good7" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good7/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good7"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Tomorrow will bring peace."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good8" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good8/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good8"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "My mind will refresh in my sleep."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Good9" type="Sprite" parent="Bed"]
+position = Vector2( -1.52588e-05, 240.393 )
+scale = Vector2( 0.899328, 0.526574 )
+texture = ExtResource( 22 )
+script = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Bed/Good9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Good9/Area2D"]
+position = Vector2( -9.93945, -8.84741 )
+shape = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Bed/Good9"]
+margin_left = -194.373
+margin_top = -123.863
+margin_right = 183.627
+margin_bottom = 163.137
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "I forgive and respect myself."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Task" type="Sprite" parent="."]
+position = Vector2( 698, 234 )
+scale = Vector2( 0.235674, 0.221692 )
+texture = ExtResource( 33 )
+region_enabled = true
+region_rect = Rect2( 791.802, 236.318, 1239.45, 839.499 )
+
+[node name="TaskLabel" type="Label" parent="Task"]
+margin_left = -356.425
+margin_top = -284.177
+margin_right = 428.575
+margin_bottom = 262.823
+size_flags_vertical = 0
+theme = ExtResource( 34 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 35 )
+text = "Still can't sleep because of annoying thoughts. Help me sort them out"
+align = 1
+valign = 1
+autowrap = true

@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/Untitled_Artwork 2 copy.png" type="Texture" id=1]
+[ext_resource path="res://assets/bed.png" type="Texture" id=2]
+[ext_resource path="res://assets/thought_right.png" type="Texture" id=3]
+[ext_resource path="res://assets/Untitled_Artwork 3.png" type="Texture" id=4]
+[ext_resource path="res://custom_font_theme.tres" type="Theme" id=5]
+[ext_resource path="res://label_font.tres" type="Theme" id=14]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy.tres" type="DynamicFont" id=15]
+[ext_resource path="res://scenes/Level2.gd" type="Script" id=16]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 42, 91.5 )
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.427451, 0.427451, 1 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.429, 0.36 )
+texture = ExtResource( 4 )
+
+[node name="Bed" type="Sprite" parent="."]
+position = Vector2( 512, 419 )
+scale = Vector2( 0.503418, 0.536621 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 48.031, 838.882, 1950.75, 775.503 )
+
+[node name="Exit" type="Button" parent="Bed"]
+anchor_left = -2.178
+anchor_top = -0.64
+anchor_right = -2.178
+anchor_bottom = -0.64
+margin_left = 3241.97
+margin_top = -286.675
+margin_right = 3706.97
+margin_bottom = -156.675
+focus_mode = 1
+theme = ExtResource( 5 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+enabled_focus_mode = 1
+icon = ExtResource( 1 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Task" type="Sprite" parent="."]
+position = Vector2( 698, 234 )
+scale = Vector2( 0.235674, 0.221692 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 791.802, 236.318, 1239.45, 839.499 )
+
+[node name="TaskLabel" type="Label" parent="Task"]
+margin_left = -364.911
+margin_top = -320.263
+margin_right = 420.089
+margin_bottom = 220.737
+size_flags_vertical = 0
+theme = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 15 )
+text = "I should try to sleep now. Click on my pillow."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Pillow" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillow"]
+position = Vector2( 231.5, 325 )
+rotation = 1.5708
+shape = SubResource( 4 )

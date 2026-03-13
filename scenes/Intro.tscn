@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/start_scene.png" type="Texture" id=1]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy 3.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/Introduction.gd" type="Script" id=3]
+[ext_resource path="res://assets/start.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Intro.gd" type="Script" id=5]
+[ext_resource path="res://assets/box.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512.5, 281.704 )
+scale = Vector2( 0.289296, 0.268998 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 251.072, 5.52698, 3550.16, 2377.86 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 495, 113.5 )
+scale = Vector2( 0.753805, 0.35 )
+texture = ExtResource( 6 )
+
+[node name="Introduction" type="Label" parent="."]
+margin_left = 124.0
+margin_top = 31.0
+margin_right = 915.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Hi, I'm Alex. Yes, I am under the table. I was doing my stuff and got overwhelmed with all the stimuli around me. While I am trying not to explode, you can look around and decide if you want to join me on my life journey with ADHD."
+autowrap = true
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Introduction"]
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 366.0
+margin_top = 174.0
+margin_right = 649.0
+margin_bottom = 264.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+icon = ExtResource( 4 )
+flat = true
+icon_align = 1
+expand_icon = true

@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/frame_0_delay-0.11s.png" type="Texture" id=1]
+[ext_resource path="res://assets/start_scene.png" type="Texture" id=2]
+[ext_resource path="res://assets/frame_2_delay-0.11s.png" type="Texture" id=3]
+[ext_resource path="res://assets/frame_4_delay-0.11s.png" type="Texture" id=4]
+[ext_resource path="res://assets/frame_3_delay-0.11s.png" type="Texture" id=5]
+[ext_resource path="res://assets/frame_1_delay-0.11s.png" type="Texture" id=6]
+[ext_resource path="res://assets/frame_5_delay-0.11s.png" type="Texture" id=7]
+[ext_resource path="res://assets/start.png" type="Texture" id=8]
+[ext_resource path="res://scenes/StartMenu.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512.5, 281.704 )
+scale = Vector2( 0.289296, 0.268998 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 251.072, 5.52698, 3550.16, 2377.86 )
+
+[node name="Name" type="AnimatedSprite" parent="."]
+position = Vector2( 500, 92 )
+scale = Vector2( 0.257119, 0.254197 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 356.0
+margin_top = 133.0
+margin_right = 639.0
+margin_bottom = 223.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+icon = ExtResource( 8 )
+flat = true
+icon_align = 1
+expand_icon = true

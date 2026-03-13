@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://custom_font_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/TextInput.gd" type="Script" id=2]
+[ext_resource path="res://assets/phone copy.png" type="Texture" id=3]
+[ext_resource path="res://assets/Untitled_Artwork 3.png" type="Texture" id=4]
+[ext_resource path="res://assets/screen.png" type="Texture" id=5]
+[ext_resource path="res://assets/phone.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Writing_task.gd" type="Script" id=7]
+[ext_resource path="res://assets/thought_left.png" type="Texture" id=8]
+[ext_resource path="res://assets/Untitled_Artwork 2.png" type="Texture" id=9]
+[ext_resource path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/cmu-typewriter/Typewriter copy 3.tres" type="DynamicFont" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="Writing_task" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.427451, 0.427451, 1 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.428811, 0.36211 )
+texture = ExtResource( 4 )
+
+[node name="Computer" type="Sprite" parent="Background"]
+position = Vector2( -13.7119, 28.3382 )
+scale = Vector2( 1.35868, 1.66259 )
+texture = ExtResource( 5 )
+offset = Vector2( 10.9503, -20.3667 )
+
+[node name="Screen" type="Sprite" parent="."]
+position = Vector2( 488, 301 )
+scale = Vector2( 0.410949, 0.417347 )
+
+[node name="TextInput" type="LineEdit" parent="Screen"]
+anchor_left = -1.887
+anchor_top = -2.438
+anchor_right = -1.887
+anchor_bottom = -2.438
+margin_left = -468.113
+margin_top = -172.562
+margin_right = 626.887
+margin_bottom = 168.438
+theme = ExtResource( 1 )
+align = 1
+placeholder_text = "Write here. Hit ENTER when you are done!"
+caret_blink = true
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="writingTaskLabel" type="Label" parent="Screen"]
+anchor_left = -328.508
+anchor_top = -414.523
+anchor_right = -328.508
+anchor_bottom = -414.523
+margin_left = -31.492
+margin_top = -0.47699
+margin_right = 866.508
+margin_bottom = 224.523
+theme = ExtResource( 1 )
+text = "Write a message to my colleague expressing my thoughts on our completed project.
+(His name is John and I was satisfied with the project)"
+align = 1
+autowrap = true
+
+[node name="FailedLabel" type="Label" parent="Screen"]
+anchor_left = -223.872
+anchor_top = -359.413
+anchor_right = -223.872
+anchor_bottom = -359.413
+margin_left = -0.00012207
+margin_top = -0.000152588
+margin_right = 630.0
+margin_bottom = 53.9998
+theme = ExtResource( 1 )
+text = "You failed the task! Try again. 
+"
+
+[node name="CompletedLabel" type="Label" parent="Screen"]
+margin_left = -420.977
+margin_top = -359.413
+margin_right = 587.023
+margin_bottom = -305.413
+theme = ExtResource( 1 )
+text = "Well done! You successfully completed your task."
+
+[node name="Phone" type="Sprite" parent="."]
+position = Vector2( 493.5, 257 )
+scale = Vector2( 0.361328, 0.439454 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Phone"]
+position = Vector2( 70.573, -150.186 )
+scale = Vector2( 0.72973, 0.693332 )
+frames = SubResource( 1 )
+playing = true
+flip_h = true
+
+[node name="AnswerPhoneButton" type="Button" parent="."]
+anchor_left = -2.178
+anchor_top = -0.64
+anchor_right = -2.178
+anchor_bottom = -0.64
+margin_left = 447.0
+margin_top = 310.0
+margin_right = 598.0
+margin_bottom = 356.0
+custom_colors/font_color_focus = Color( 0.564706, 0.0392157, 0.0392157, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Answer the phone"
+
+[node name="alex" type="Sprite" parent="."]
+position = Vector2( 915, 437 )
+scale = Vector2( 0.194092, 0.197754 )
+texture = ExtResource( 9 )
+
+[node name="bubble" type="Sprite" parent="."]
+position = Vector2( 767, 182 )
+scale = Vector2( 0.282715, 0.25708 )
+texture = ExtResource( 8 )
+region_rect = Rect2( 437.823, 510.092, 1103.73, 845.972 )
+
+[node name="calling" type="Label" parent="."]
+margin_left = 636.0
+margin_top = 66.0
+margin_right = 887.0
+margin_bottom = 211.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "I can't 
+concentrate while the phone is ringing!"
+align = 1
+autowrap = true
