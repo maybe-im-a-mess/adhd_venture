@@ -1,2 +1,22 @@
-# Godot export artifacts
-Archive 2.zip
+# Godot import cache
+.import/
+
+# Godot 4 cache
+.godot/
+
+# Mono build artifacts
+.mono/
+
+# Exported builds
+export*/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# macOS
+.DS_Store
